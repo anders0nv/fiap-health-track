@@ -1,0 +1,220 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="theme-color" content="#2196F3">
+    <title>Health Track - Home</title>
+    <link rel="shortcut icon" href="assets/images/favicon.ico">
+    <link rel="stylesheet" href="https://bootswatch.com/4/materia/bootstrap.min.css" crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/css/vendor.css">
+    <meta name="theme-color" content="#2196F3">
+</head>
+
+<body>
+    <nav class="navbar sticky-top bg-light flex-md-nowrap p-0 shadow">
+        <a class="navbar-brand bg-light col-md-3 col-lg-2 mr-0 px-3 text-dark no-shadow no-hover">Health Track</a>
+        <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-toggle="collapse"
+            data-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <ul class="navbar-nav px-3">
+            <li class="nav-item text-nowrap">
+                <a class="nav-link" href="index.html">Sair</a>
+            </li>
+        </ul>
+    </nav>
+
+    <div class="container-fluid">
+        <div class="row">
+            <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
+                <div class="sidebar-sticky pt-3">
+                    <div class="text-center">
+                        <img src="assets/images/undraw_male_avatar_323b.svg" class="rounded-circle shadow-lg w-50" />
+                        <h5 class="mt-3">Fulano de tal</h5>
+                    </div>
+                    <ul class="nav flex-column">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="#!">
+                                <span data-feather="home"></span>
+                                Relatórios <span class="sr-only">(current)</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="diet.html">
+                                <span data-feather="percent"></span>
+                                Dieta
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="weight.html">
+                                <span data-feather="pie-chart"></span>
+                                Peso
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="physical-activity.html">
+                                <span data-feather="activity"></span>
+                                Atividades físicas
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="blood-pressure.html">
+                                <span data-feather="heart"></span>
+                                Pressão arterial
+                            </a>
+                        </li>
+                    </ul>
+
+                    <h6
+                        class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
+                        <span>Gerenciar</span>
+                        <a class="d-flex align-items-center text-muted" href="#" aria-label="Add a new report">
+                            <span data-feather="plus-circle"></span>
+                        </a>
+                    </h6>
+                    <ul class="nav flex-column mb-2">
+                        <li class="nav-item">
+                            <a class="nav-link" href="personal-data.html">
+                                <span data-feather="user"></span>
+                                Dados pessoais
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+
+            <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
+                <div
+                    class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+                    <h1 class="h2">Relatórios</h1>
+                    <div class="btn-toolbar mb-2 mb-md-0">
+                        <button type="button" class="btn btn-sm btn-outline-secondary dropdown-toggle text-dark">
+                            <span data-feather="calendar"></span>
+                            Este mês
+                        </button>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-lg-4">
+                        <div class="card rounded card-custom shadow">
+                            <div class="card card-head rounded shadow-sm bg-info text-white">
+                                <span data-feather="activity"></span>
+                            </div>
+                            <div class="card-body">
+                                <h6 class="text-right"><small>Atividade física</small></h6>
+                                <canvas class="my-4 w-100" id="chart-1"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="card rounded card-custom shadow">
+                            <div class="card card-head rounded shadow-sm bg-danger text-white">
+                                <span data-feather="heart"></span>
+                            </div>
+                            <div class="card-body">
+                                <h6 class="text-right"><small>Pressão arterial</small></h6>
+                                <canvas class="my-4 w-100" id="chart-2"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="card rounded card-custom shadow">
+                            <div class="card card-head rounded shadow-sm bg-primary text-white">
+                                <span data-feather="pie-chart"></span>
+                            </div>
+                            <div class="card-body">
+                                <h6 class="text-right"><small>Peso</small></h6>
+                                <canvas class="my-4 w-100" id="chart-3"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="card rounded shadow my-4">
+                            <div class="card-body">
+
+                                <h4 class="text-center">Composição da dieta</h4>
+
+                                <canvas class="my-4 w-100" id="chart-4" width="1300" height="300"></canvas>
+
+                                <div class="table-responsive">
+                                    <table class="table table-hover">
+                                        <thead>
+                                            <tr>
+                                                <th>Alimento 1</th>
+                                                <th>Alimento 2</th>
+                                                <th>Alimento 3</th>
+                                                <th>Alimento 4</th>
+                                                <th>Alimento 5</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>Peixe</td>
+                                                <td>Ovos</td>
+                                                <td>Brócolis</td>
+                                                <td>Arroz</td>
+                                                <td>Leguminoso</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Peixe</td>
+                                                <td>Ovos</td>
+                                                <td>Brócolis</td>
+                                                <td>Arroz</td>
+                                                <td>Leguminoso</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Peixe</td>
+                                                <td>Ovos</td>
+                                                <td>Brócolis</td>
+                                                <td>Arroz</td>
+                                                <td>Leguminoso</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Peixe</td>
+                                                <td>Ovos</td>
+                                                <td>Brócolis</td>
+                                                <td>Arroz</td>
+                                                <td>Leguminoso</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Peixe</td>
+                                                <td>Ovos</td>
+                                                <td>Brócolis</td>
+                                                <td>Arroz</td>
+                                                <td>Leguminoso</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Peixe</td>
+                                                <td>Ovos</td>
+                                                <td>Brócolis</td>
+                                                <td>Arroz</td>
+                                                <td>Leguminoso</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.9.0/feather.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
+    </script>
+    <script src="assets/js/dashboard.js"></script>
+</body>
+
+</html>
